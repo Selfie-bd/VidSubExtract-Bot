@@ -87,7 +87,7 @@ async def main(bot, m):
     else:
         video_info = subprocess.check_output(f'ffprobe -v quiet -show_streams -select_streams v:0 -of json "{file_dl_path}"', shell=True).decode()
         fields = json.loads(video_info)['streams'][0]
-        duration = int(fields['duration'].split(".")[0])
+        duration = int(fields[duration].split(".")[0])
     sub_count = 0
     repeated_count = 0
     last_text = " "
